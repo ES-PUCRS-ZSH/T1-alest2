@@ -1,5 +1,4 @@
 package edu.pucrs.zsh
-import java.io.BufferedReader
 import java.io.File
 
 class TextReader {
@@ -9,7 +8,6 @@ class TextReader {
 		val primeiraLinha = reader.readLine()
 		val segundaLinha = reader.readLines()
 
-		val lista = ArrayList<String>()
 		val numeros = ArrayList<Int>()
 
 		for(line in segundaLinha) {
