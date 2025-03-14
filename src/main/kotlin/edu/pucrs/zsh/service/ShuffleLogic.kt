@@ -3,11 +3,11 @@ package edu.pucrs.zsh.service
 import java.math.BigInteger
 
 class ShuffleLogic {
-	fun mmc(a:BigInteger, b:BigInteger): BigInteger{
+	private fun mmc(a:BigInteger, b:BigInteger): BigInteger{
 		return a.multiply(b).divide(a.gcd(b))
 	}
 
-	fun findCicle(recipe: ArrayList<Int>):ArrayList<Int>{
+	private fun findCicle(recipe: ArrayList<Int>):ArrayList<Int>{
 		val visited = BooleanArray(recipe.size) {false}
 		val cicle = arrayListOf<Int>()
 
