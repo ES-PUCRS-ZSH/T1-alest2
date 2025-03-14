@@ -9,13 +9,14 @@ val leitor = TextReader()
 
 
 fun main (){
-	println("Hello World!")
-//	println("Digite o nome do arquivo: ")
-//	val nome: String = readln()
+//	println("Hello World!")
+	println("Digite o nome do arquivo: ")
+	val nome: String = readln()
 
-	val (primeiraLinha, segundaLinha) = leitor.lerTexto("caso77")
+	val (primeiraLinha, segundaLinha) = leitor.lerTexto(nome)
 	val shuffleLogic = ShuffleLogic()
 
+	println(primeiraLinha)
 	println(shuffleLogic.findRep(segundaLinha))
 
 //	println(segundaLinha)
