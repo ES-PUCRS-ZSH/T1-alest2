@@ -1,5 +1,8 @@
 package edu.pucrs.zsh
 
+import edu.pucrs.zsh.adapter.TextReader
+import edu.pucrs.zsh.service.ShuffleLogic
+
 
 val leitor = TextReader()
 
@@ -10,9 +13,11 @@ fun main (){
 //	println("Digite o nome do arquivo: ")
 //	val nome: String = readln()
 
-	val (primeiraLinha, segundaLinha) = leitor.lerTexto("casoteste")
+	val (primeiraLinha, segundaLinha) = leitor.lerTexto("caso77")
+	val shuffleLogic = ShuffleLogic()
 
-	println("Numero do array: $primeiraLinha")
-	println("Array: $segundaLinha")
+	println(shuffleLogic.findRep(segundaLinha))
+
+//	println(segundaLinha)
 
 }
