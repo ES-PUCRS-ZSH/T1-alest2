@@ -10,10 +10,10 @@ val leitor = TextReader()
 
 fun main (){
 //	println("Hello World!")
-	println("Digite o nome do arquivo: ")
-	val nome: String = readln()
+//	println("Digite o nome do arquivo: ")
+//	val nome: String = readln()
 
-	val (primeiraLinha, segundaLinha) = leitor.lerTexto(nome)
+	val (primeiraLinha, segundaLinha) = leitor.lerTexto("caso197")
 	val shuffleLogic = ShuffleLogic()
 
 	println(primeiraLinha)

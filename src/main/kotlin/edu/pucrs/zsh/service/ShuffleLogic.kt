@@ -7,28 +7,51 @@ class ShuffleLogic {
 		return a.multiply(b).divide(a.gcd(b))
 	}
 
-	private fun findCicle(recipe: ArrayList<Int>):ArrayList<Int>{
+	private fun findCycle(recipe: ArrayList<Int>):ArrayList<Int>{
 		val visited = BooleanArray(recipe.size) {false}
-		val cicle = arrayListOf<Int>()
+		val cycle = arrayListOf<Int>()
 
 		for (i in recipe.indices){
 			if(!visited[i]){
 				var x = i
-				var cicleSize = 0
+				var cycleSize = 0
 				while (!visited[x]){
 					visited[x] = true
-					cicleSize++
+					cycleSize++
 					x = recipe[x]
 				}
-				cicle.add(cicleSize)
+				cycle.add(cycleSize)
 			}
 		}
-		return cicle
+		return cycle
 	}
 
 	fun findRep(lista: ArrayList<Int>):BigInteger{
-		val cicles = findCicle(lista)
-		return cicles.map { it.toBigInteger() }
+		val cycles = findCycle(lista)
+		return cycles.map { it.toBigInteger() }
 			.reduce{ acc, it -> mmc(acc, it)}
 	}
 }
+
+/*
+* fun detectarCiclo(posicaoRobos: List<Int>, receita: List<Int>) {
+    val posicoes = mutableSetOf<List<Int>>()
+    var rodada = 0
+    var posicaoAtual = posicaoRobos
+
+    while (true) {
+        if (posicoes.contains(posicaoAtual)) {
+            println("Ciclo detectado na rodada: $rodada")
+            break
+        }
+
+        posicoes.add(posicaoAtual)
+        println("Rodada: $rodada Posição: $posicaoAtual")
+
+        val novaPosicao = receita.map { posicaoAtual[it] }
+        posicaoAtual = novaPosicao
+
+        rodada++
+    }
+}
+* */
